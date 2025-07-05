@@ -1,100 +1,151 @@
-p {
-    /* background-color: red; */
-    flex-grow: 1;
-}
-.app-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
+/* Main container */
+.weather-display-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f5f7fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.todo-container {
-  margin: 1.5rem 0;
+/* Location section */
+.location-data {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.todo-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.75rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.location-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
 }
 
-.todo-item.done {
-  opacity: 0.7;
+.current-date-time {
+    font-size: 1rem;
+    color: #7f8c8d;
 }
 
-.todo-item.done p {
-  text-decoration: line-through;
-  color: #6c757d;
+/* Current weather section */
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 30px;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
+.temperature-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.action-icon {
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.2s;
+.weather-icon {
+    height: 80px;
+    font-size: 80px;
 }
 
-.action-icon:hover {
-  transform: scale(1.1);
+.weather-icon-day {
+    color: #f1c40f;
 }
 
-.action-icon.complete {
-  color: #28a745;
+.weather-icon-night {
+    color: #34495e;
 }
 
-.action-icon.undo {
-  color: #ffc107;
+.current-temp {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 0;
 }
 
-.action-icon.delete {
-  color: #dc3545;
+.weather-details {
+    text-align: right;
 }
 
-.input-container {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+.weather-condition {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
 }
 
-input {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 1rem;
+.temp-range {
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
 }
 
-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
+.feels-like {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
 }
 
-button:hover {
-  background-color: #0069d9;
+/* Weekly forecast section */
+.weekly-forecast {
+    margin-top: 20px;
 }
 
-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
+.weekly-forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.daily-forecast {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.daily-forecast:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-day {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.forecast-temp-max {
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 5px;
+}
+
+.forecast-temp-min {
+    color: #3498db;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .weather-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-details {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .weekly-forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .weekly-forecast-container {
+        grid-template-columns: 1fr;
+    }
 }
