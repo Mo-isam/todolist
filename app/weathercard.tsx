@@ -12,7 +12,7 @@ type DailyForecast = {
     minTemp: number;
     maxTemp: number;
 };
-
+// lk
 const WeatherDisplay: React.FC<WeatherDataProps> = ({
     currentWeatherData,
     forecastData,
